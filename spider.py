@@ -1,8 +1,10 @@
 from urllib import request
 import re
+headers={'User_Agent':"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"}
 num=input("题目编号：")
-response = request.urlopen("http://acm.hdu.edu.cn/showproblem.php?pid={}".format(num))
-html = response.read()
+response = request.Request("http://acm.hdu.edu.cn/showproblem.php?pid={}".format(num),headers=headers)
+respons = request.urlopen(response)
+html = respons.read()
 html = html.decode("gb2312")
 title=re.findall(r"<h1 style='color:#1A5CC8'>(.*?)</h1>",html)
 ltitle=re.findall(r"<div class=panel_title align=left>(.*?)</div>",html)
