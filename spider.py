@@ -12,6 +12,6 @@ def work (num):
 	d={}
 	for i,d[ltitle[i]] in enumerate(test):
 		pass
-	return (title,d)
+	return (title[0],d)
 if __name__=='__main__':
 	print (work(input()))
