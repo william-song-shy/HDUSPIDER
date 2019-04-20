@@ -1,5 +1,10 @@
 from urllib import request
 import re
+class HDU:
+        def __init__ (self,num=1001):
+                self.num=num
+        def html (self):
+                return work(self.num)
 def work (num):
 	headers={'User_Agent':"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"}
 	response = request.Request("http://acm.hdu.edu.cn/showproblem.php?pid={}".format(num),headers=headers)
