@@ -19,4 +19,5 @@ def work (num):
 		pass
 	return (title[0],d)
 if __name__=='__main__':
-	print (work(input()))
+	problem=HDU(input())
+	print (problem.html())
