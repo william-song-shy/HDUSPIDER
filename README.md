@@ -14,7 +14,7 @@ question=HDU(num=1001,headers={'User_Agent':
 > How to get the content of the questions?
 
 ```python
-questios.html()
+question.html()
 ```
 
 # Q& A
