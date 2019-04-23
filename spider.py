@@ -11,7 +11,7 @@ class HDU:
                 if response.status==404:
                         raise HDUError ('Not found error of {}'.format(self.num))
                 html = response.read()
-                html = html.decode("gb2312")
+                html = html.decode("gb18030")
                 if  not re.findall('No such problem - ',html)==[]:
                         raise HDUError ('Not found error of {}'.format(self.num))
                 title=re.findall(r"<h1 style='color:#1A5CC8'>(.*?)</h1>",html)
