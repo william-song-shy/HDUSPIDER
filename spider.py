@@ -1,5 +1,6 @@
 from urllib import request
 import re
+import html
 class HDUError (Exception):
 	pass
 class Content ():
@@ -9,6 +10,8 @@ class Content ():
                 self.subtitle=list (self.content.keys())
         def __str__ (self):
                 return str((self.title,self.content))
+        def markup (self):
+                return html.unescape(str((self.title,self.content)))
 class HDU:
         def __init__ (self,num=1001):
                 self.num=num
