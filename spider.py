@@ -2,6 +2,13 @@ from urllib import request
 import re
 class HDUError (Exception):
 	pass
+class Content ():
+        def __init__(self,data):
+                self.title=data[0]
+                self.content=data[1]
+                self.subtitle=list (self.content.keys())
+        def __str__ (self):
+                return str((self.title,self.content))
 class HDU:
         def __init__ (self,num=1001):
                 self.num=num
@@ -20,7 +27,7 @@ class HDU:
                 d={}
                 for i,d[ltitle[i]] in enumerate(test):
                         pass
-                return (title[0],d)
+                return Content ((title[0],d))
 if __name__=='__main__':
 	problem=HDU(input())
 	print (problem.work())
