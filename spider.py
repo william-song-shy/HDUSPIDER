@@ -10,6 +10,13 @@ class Content ():
                 self.subtitle=list (self.content.keys())
         def __str__ (self):
                 return str((self.title,self.content))
+        def get (self,method=None):
+                if method==None:
+                        return str((self.title,self.content))
+                if not callable (method):
+                        raise HDUError ("Method is not callable")
+                else:
+                        return method(self.title,self.content)
         def markup (self):
                 return html.unescape(str((self.title,self.content)))
 class HDU:
