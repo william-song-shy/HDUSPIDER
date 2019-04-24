@@ -21,6 +21,9 @@ class Content ():
                 return html.unescape(str((self.title,self.content)))
 class HDU:
         def __init__ (self,num=1001):
+                if isinstance (num,str):
+                        if not num.isdecimal():
+                                raise HDUError ('Num variable is not an integer')
                 self.num=num
         def work (self,headers={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"}):
                 response = request.Request("http://acm.hdu.edu.cn/showproblem.php?pid={}".format(self.num),headers=headers)
