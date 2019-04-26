@@ -22,7 +22,7 @@ class Content ():
                 if not callable(method):
                         raise HDUError("Method is not callable")
                 else:
-                        return method(self.title, self.content)
+                        return method(self)
 
         def markup(self):
                 return html.unescape(str((self.title, self.content)))
