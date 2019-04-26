@@ -37,9 +37,7 @@ class HDU:
                 title=re.findall(r"<h1 style='color:#1A5CC8'>(.*?)</h1>",html)
                 ltitle=re.findall(r"<div class=panel_title align=left>(.*?)</div>",html)
                 test=re.findall(r"<div class=panel_content>([\d\D]*?)</div>",html)
-                d={}
-                for i,d[ltitle[i]] in enumerate(test):
-                        pass
+                d=dict (zip (ltitle,test))
                 return Content ((title[0],d))
 if __name__=='__main__':
 	problem=HDU(input())
